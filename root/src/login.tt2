@@ -1,0 +1,17 @@
+<div id="page" style="display: none_;">
+	<div class="page-top"></div>
+	<div class="page-content">
+		<div class="page-wrapper">
+			<h1> Admin Login </h1>
+			<form method="post" action="[% c.uri_for('/login') %]">
+				<table cellpadding="10px">
+					<tr><td><input type="text" placeholder="User Name" name="username" required></td></tr>
+					<tr><td><input type="password" placeholder="Password" name="password" required></td></tr>
+				</table>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+	</div>
+	<div class="page-bottom">
+	</div>
+</div>

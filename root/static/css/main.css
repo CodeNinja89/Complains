@@ -1,0 +1,98 @@
+HTML, BODY {
+	margin:0px;
+	padding:0px;
+}
+BODY {
+    font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+    color: #666666;
+    font-size: 12px;
+	height:100%;
+	text-align: center;
+	padding-top: 10px;
+}
+
+A { color: #0A8ECC; }
+
+A:HOVER {
+	text-decoration: none;
+	color: #CCD;
+}	
+
+H1, H2 {
+	color: #CCC;
+	margin: 0;
+	padding: 0 0 5px 0;
+	font-size: 16px;
+	padding-bottom: 3px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ccc;
+}
+
+H1 {
+	padding-bottom: 3px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ccc;
+}
+
+H2 { font-size: 14px;}
+
+.bgstretcher-page { text-align: center;}
+
+#page {
+	margin: 0 auto;
+	width: 800px;
+	text-align: justify;
+}
+
+.page-top, .page-bottom,
+.page-content {
+	float: left;
+	width: 900px;
+}
+
+.page-top, .page-bottom { height: 30px;}
+
+.page-top { 
+	margin-top: 30px;
+	background: url("../images/page-top.png") no-repeat left top; 
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./../images/page-top.png', sizingMethod='image');
+}
+
+.page-bottom { 
+	background: url("../images/page-bottom.png") no-repeat left top;
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./../images/page-bottom.png', sizingMethod='image');
+}
+
+.page-content {
+	font-size: 12px;
+	color: #ccc;
+	background: url("../images/page-bg.png") repeat-y left top; 
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./../images/page-bg.png', sizingMethod='scale');
+}
+
+.page-wrapper { 
+	float: left;
+	width: 740px;
+	display: inline;
+	margin-left: 30px;
+}
+
+#done {
+	color: red;
+	position: relative;
+	margin-top: 20px;
+}
+
+TD,TH {
+	border: 1px solid white;
+	color: white;
+}
+TD {
+	font-size: 12px;
+}
+TH {
+	font-size: 16px;
+}

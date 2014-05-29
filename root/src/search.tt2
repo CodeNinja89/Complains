@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css">
+<h2>Complain Details</h2>
+<div id="page" style="display: none_;">
+	<div class="page-top"></div>
+	<div class="page-content">
+		<div class="page-wrapper">
+			<table style="color:white">
+				<tr><td>Complain ID: </td><td>[% complain.complainid %]</td></tr>
+				<tr><td>Customer Name: </td><td>[% complain.username %]</td></tr>
+				<tr><td>Customer Address: </td><td>[% complain.useradress %]</td></tr>
+				<tr><td>Customer Contact: </td><td>[% complain.usercontact %]</td></tr>
+				<tr><td>Product serial: </td><td>[% complain.productserial %]</td></tr>
+				<tr><td>Product Type: </td><td>[% complain.producttype %]</td></tr>
+				<tr><td>Product Make: </td><td>[% complain.productmake %]</td></tr>
+				<tr><td>Complain: </td><td>[% complain.complain %]</td></tr>
+				[% IF complain.status == 0 %]
+					<tr><td>Status: Open/pending</td></tr>
+				[% END %]
+				[% IF complain.status == 1 %]
+					<tr><td>Status: In process</td></tr>
+				[% END %]
+				[% IF complain.status == 2 %]
+					<tr><td>Status: Closed</td></tr>
+				[% END %]
+			</table>
+			<p><a href="[% c.uri_for('done') %]">Click here to redirect</a></p>
+		</div>
+	</div>
+	<div class="page-bottom">
+	</div>
+</div>

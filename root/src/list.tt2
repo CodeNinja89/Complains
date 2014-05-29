@@ -1,0 +1,25 @@
+<div id="page" style="display: none_;">
+	<div class="page-top"></div>
+	<div class="page-content">
+		<div class="page-wrapper">
+			<h1>All Complains</h1>
+			<table cellpadding="5" cellspacing="0">
+				<tr>
+					<th>ID</th><th>User Name</th><th>Address</th>
+					<th>Contact</th><th>Product Serial</th><th>Type</th>
+					<th>Make/Vendor</th><th>Complain</th><th>Status</th>
+				</tr>
+				[% FOREACH complain IN complains %]
+					<tr>
+						<td>[% complain.complainid %]</td><td>[% complain.username %]</td>
+						<td>[% complain.useraddress %]</td><td>[% complain.usercontact %]</td>
+						<td>[% complain.productserial %]</td><td>[% complain.producttype %]</td>
+						<td>[% complain.productmake %]</td><td>[% complain.complain %]</td>
+						<td>[% complain.status %]</td>
+					</tr>
+				[% END %]
+			</table>
+		</div>
+	</div>
+	<div class="page-bottom"></div>
+</div>

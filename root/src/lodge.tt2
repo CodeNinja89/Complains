@@ -1,0 +1,47 @@
+<div id="page" style="display: none_;">
+	<div class="page-top"></div>
+	<div class="page-content">
+		<div class="page-wrapper">
+			<h1> Lodge Complain </h1>
+			<form method="post" action="[% c.uri_for('lodgeComplain') %]">
+				<table cellpadding="10px">
+					<tr><td><input type="text" placeholder="Your name" name="name" required></td></tr>
+					<tr><td><textarea rows="4" cols="30" placeholder="Your address" name="address" required></textarea></td></tr>
+					<tr><td><input type="text" placeholder="Contact Number" name="contact" required></td></tr>
+					<tr><td><input type="text" placeholder="Product serial number" name="serial" required></td></tr>
+					<tr><td>
+						<select name="productType">
+							<option value="" selected="selected">Select Product Type</option>
+							<option value="desktop">Desktop</option>
+							<option value="laptop">Laptop</option>
+							<option value="server">Server</option>
+							<option value="printer">Printer</option>
+							<option value="network">Network</option>
+							<option value="other">Other</option>
+						</select>
+					</td></tr>
+					<tr><td>
+						<select name="problem">
+							<option value="" selected="selected">Please Select</option>
+							<option value="No Display">No Display</option>
+							<option value="PC Restart">PC Restart</option>
+							<option value="Software Problem">Software Problem</option>
+							<option value="Modem">Modem</option>
+							<option value="PC Shutdown">PC Shutdown</option>
+							<option value="Hard Disk">Hard Disk</option>
+							<option value="CD/DVD-RW/ROM/FDD">CD/DVD-RW/ROM/FDD</option>
+							<option value="I/O Device">I/O Device</option>
+							<option value="PC Hang">PC Hang</option>
+							<option value="OTHER">Other</option>
+						</select>
+					</td></tr>
+					<tr><td><textarea id="complain" name="complain" rows="4" cols="50" placeholder="Whats your complain?"></textarea></tr></td>
+				</table>
+				<input type="submit" value="Lodge complain" id="submit">
+				<input type="reset" value="Reset complain form">
+			</form>
+		</div>
+	</div>
+	<div class="page-bottom">
+	</div>
+</div>

@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css">
+<div id="page" style="display: none_;">
+	<div class="page-top"></div>
+	<div class="page-content">
+		<div class="page-wrapper">
+			<h1>[% complain.complainid %]</h1>
+			<table cellspacing="0" cellpadding="5">
+				<tr>
+					<th>ID</th><th>User Name</th><th>Address</th>
+					<th>Contact</th><th>Product Serial</th><th>Type</th>
+					<th>Make/Vendor</th><th>Complain</th><th>Status</th>
+				</tr>
+				<tr>
+					<td>[% complain.complainid %]</td><td>[% complain.username %]</td>
+					<td>[% complain.useraddress %]</td><td>[% complain.usercontact %]</td>
+					<td>[% complain.productserial %]</td><td>[% complain.producttype %]</td>
+					<td>[% complain.productmake %]</td><td>[% complain.complain %]</td>
+					<td>[% complain.status %]</td>
+				</tr>
+			</table>
+			<form method="post" action="[% c.uri_for('/admin/assign') %]">
+				<p>
+					<select name="engineerAssigned">
+						<option value="" selected="selected">Assign Engineer</option>
+						<option value="Engineer 1">Engineer 1</option>
+						<option value="Engineer 2">Engineer 2</option>
+						<option value="Engineer 3">Engineer 3</option>
+					</select>
+				</p>
+				<p>
+					<select name="problem">
+						<option value="" selected="selected">Problem</option>
+						<option value="No Display">No Display</option>
+						<option value="PC Restart">PC Restart</option>
+						<option value="Software Problem">Software Problem</option>
+						<option value="Modem">Modem</option>
+						<option value="PC Shutdown">PC Shutdown</option>
+						<option value="Hard Disk">Hard Disk</option>
+						<option value="CD/DVD-RW/ROM/FDD">CD/DVD-RW/ROM/FDD</option>
+						<option value="I/O Device">I/O Device</option>
+						<option value="PC Hang">PC Hang</option>
+						<option value="OTHER">Other</option>
+					</select>
+				</p>
+				<p><textarea id="complain" name="description" rows="4" cols="50" placeholder="Whats your complain?"></textarea></p>
+				<p>Set Status:</p>
+				<input type="radio" name="status" value="0">Open<br />
+				<input type="radio" name="status" value="1">In process<br />
+				<input type="radio" name="status" value="2">Closed/Resolved
+				<p><input type="submit" value="Resolve/Assign" id="submit"></p>
+			</form>
+		</div>
+	</div>
+	<div class="page-bottom"></div>
+</div>

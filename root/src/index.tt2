@@ -1,0 +1,63 @@
+<!--
+   index.tt2.html
+   
+   Copyright 2014 Code Ninja <code-ninja@code-ninja-GeniuSisMe>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Complaint Tracking System</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.22" />
+	<link rel="stylesheet" type="text/css" media="screen" href="../static/css/dock-example2.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css">
+	<script type="text/javascript" src="../static/js/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="../static/js/jquery.jqDock.min.js"></script>
+	<script type="text/javascript" src="../static/js/simplyCountable.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var jqDockOpts = {align: 'left', duration: 200, labels: 'tc', size: 48, distance: 85};
+			$('#jqDock').jqDock(jqDockOpts);
+		});
+	</script>
+</head>
+
+<body>
+	<h2>Welcome to complain tracking System.</h2>
+	<div id="dockContainer">
+		<ul id="jqDock">
+			<a class="dockItem" href="[% c.uri_for('lodge') %]"><img src="../static/images/create.png" title="Create" /></a>
+			<a class="dockItem" href="[% c.uri_for('track') %]"><img src="../static/images/search.png" title="Track" /></a>
+			<a class="dockItem" href="[% c.uri_for('/login') %]"><img src="../static/images/tow.png" title="Admin Login" /></a>
+		</ul>
+	</div>
+	<div id="LoadMe"><b>Please select options from left.</b></div>
+	<script>
+	$('.dockItem').click(function() {
+		$('#LoadMe').load($(this).attr('href')).hide().fadeIn();
+		return false;
+	});
+	</script>
+</body>
+
+</html>
