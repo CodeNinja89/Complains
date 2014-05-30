@@ -3,7 +3,7 @@
 	<div class="page-content">
 		<div class="page-wrapper">
 			<h1>All Complains</h1>
-			<table cellpadding="5" cellspacing="0">
+			<table cellpadding="5" cellspacing="0" width="100%">
 				<tr>
 					<th>ID</th><th>User Name</th><th>Address</th>
 					<th>Contact</th><th>Product Serial</th><th>Type</th>
@@ -15,7 +15,15 @@
 						<td>[% complain.useraddress %]</td><td>[% complain.usercontact %]</td>
 						<td>[% complain.productserial %]</td><td>[% complain.producttype %]</td>
 						<td>[% complain.productmake %]</td><td>[% complain.complain %]</td>
-						<td>[% complain.status %]</td>
+						[% IF complain.status == 0 %]
+							<tr><td>Open/pending</td></tr>
+						[% END %]
+						[% IF complain.status == 1 %]
+							<tr><td>In process</td></tr>
+						[% END %]
+						[% IF complain.status == 2 %]
+							<tr><td>Closed</td></tr>
+						[% END %]
 					</tr>
 				[% END %]
 			</table>

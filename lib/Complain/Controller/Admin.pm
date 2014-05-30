@@ -52,23 +52,32 @@ sub resolve :Chained('base') :PathPart('resolve') {
 	}
 }
 
-sub assign :Chained('base') :PathPart('assign') {
-	my ($self, $c) = @_;
+sub assign :Chained('base') :PathPart('assign') :Args(1){
+	my ($self, $c, $id) = @_;
 	my $engineer = $c->request->params->{engineerAssigned};
 	my $problem = $c->request->params->{problem};
 	my $description = $c->request->params->{description};
 	my $status = $c->request->params->{status};
 	my $detail = $problem.": ".$description;
-	my $complain = $c->model('DB::Resolve')->create({
-		id => $c->stash->{id},
-		status => $status,
-		assigned => $engineer,
-		detail => $detail
-	});
-	my $user = $c->stash->{resultset}->find($c->stash->{id});
-	$user->status($status);
-	$user->update();
-	$c->log->debug("admin/assign: Updated record!");
+	$c->stash(resolve => $c->model('DB::Resolve'));
+	if(!$c->stash->{resolve}->find($id)) {
+		my $complain = $c->model('DB::Resolve')->create({
+			id => $id,
+			status => $status,
+			assigned => $engineer,
+			detail => $detail
+		});
+	} else {
+		$c->stash->{resolve}->update({
+			status => $status,
+			detail => $detail,
+			assigned => $engineer
+		});
+	}
+	my $rs = $c->stash->{resultset}->find($id); # chained set :)
+	if($rs) {
+		$rs->update({status => $status});
+	}
 	$c->stash(template => 'adminIndex.tt2');
 }
 

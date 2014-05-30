@@ -18,7 +18,7 @@
 					<td>[% complain.status %]</td>
 				</tr>
 			</table>
-			<form method="post" action="[% c.uri_for('/admin/assign') %]">
+			<form method="post" action="[% c.uri_for('/admin/assign') %]/[% complain.complainid%]">
 				<p>
 					<select name="engineerAssigned">
 						<option value="" selected="selected">Assign Engineer</option>
