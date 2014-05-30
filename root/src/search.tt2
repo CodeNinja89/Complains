@@ -7,7 +7,7 @@
 			<table style="color:white">
 				<tr><td>Complain ID: </td><td>[% complain.complainid %]</td></tr>
 				<tr><td>Customer Name: </td><td>[% complain.username %]</td></tr>
-				<tr><td>Customer Address: </td><td>[% complain.useradress %]</td></tr>
+				<tr><td>Customer Address: </td><td>[% complain.useraddress %]</td></tr>
 				<tr><td>Customer Contact: </td><td>[% complain.usercontact %]</td></tr>
 				<tr><td>Product serial: </td><td>[% complain.productserial %]</td></tr>
 				<tr><td>Product Type: </td><td>[% complain.producttype %]</td></tr>

@@ -78,7 +78,8 @@ sub assign :Chained('base') :PathPart('assign') :Args(1){
 	if($rs) {
 		$rs->update({status => $status});
 	}
-	$c->stash(template => 'adminIndex.tt2');
+	$c->response->redirect($c->uri_for($self->action_for('index'),
+		{status_msg => 'Record updated'}));
 }
 
 =head1 AUTHOR

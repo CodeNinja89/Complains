@@ -38,6 +38,7 @@ sub lodgeComplain :Chained('/') :PathPart('complain/lodgeComplain') :Args(0) {
 	my $contact = $c->request->params->{contact};
 	my $serial = $c->request->params->{serial};
 	my $productType = $c->request->params->{productType};
+	my $productMake = $c->request->params->{productMake};
 	my $problem = $c->request->params->{problem};
 	my $complain = $c->request->params->{complain};
 	$complain = $problem." - ".$complain;
@@ -48,7 +49,7 @@ sub lodgeComplain :Chained('/') :PathPart('complain/lodgeComplain') :Args(0) {
 		usercontact => $contact,
 		productserial => $serial,
 		producttype => $productType,
-		productmake => 'HP',
+		productmake => $productMake,
 		complain => $complain,
 		status => 0 # new complain... status == open
 	});

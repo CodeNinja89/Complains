@@ -1,3 +1,4 @@
+<script type="text/javascript" src="../static/js/lodge.js"></script>
 <div id="page" style="display: none_;">
 	<div class="page-top"></div>
 	<div class="page-content">
@@ -10,7 +11,7 @@
 					<tr><td><input type="text" placeholder="Contact Number" name="contact" required></td></tr>
 					<tr><td><input type="text" placeholder="Product serial number" name="serial" required></td></tr>
 					<tr><td>
-						<select name="productType">
+						<select name="productType" id="type">
 							<option value="" selected="selected">Select Product Type</option>
 							<option value="desktop">Desktop</option>
 							<option value="laptop">Laptop</option>
@@ -21,7 +22,11 @@
 						</select>
 					</td></tr>
 					<tr><td>
-						<select name="problem">
+						<select name="productMake" id="make">
+							<option value="" selected="selected">Select Product Make/Vendor</option>
+						</select>
+					<tr><td>
+						<select name="problem" id="problem">
 							<option value="" selected="selected">Please Select</option>
 							<option value="No Display">No Display</option>
 							<option value="PC Restart">PC Restart</option>
@@ -32,7 +37,7 @@
 							<option value="CD/DVD-RW/ROM/FDD">CD/DVD-RW/ROM/FDD</option>
 							<option value="I/O Device">I/O Device</option>
 							<option value="PC Hang">PC Hang</option>
-							<option value="OTHER">Other</option>
+							<option value="Other">Other</option>
 						</select>
 					</td></tr>
 					<tr><td><textarea id="complain" name="complain" rows="4" cols="50" placeholder="Whats your complain?"></textarea></tr></td>

@@ -48,11 +48,13 @@
 		<ul id="jqDock">
 			<a class="dockItem" href="[% c.uri_for('/admin/list') %]"><img src="../static/images/create.png" title="Current Calls" /></a>
 			<a class="dockItem" href="[% c.uri_for('/admin/resolve') %]"><img src="../static/images/search.png" title="Resolve Calls" /></a>
-			<a class="dockItem" href="#"><img src="../static/images/tow.png" title="Set Call Status" /></a>
 			<a href="[% c.uri_for('/logout') %]"><img src="../static/images/create.png" title="Logout" /></a>
 		</ul>
 	</div>
-	<div id="LoadMe"><b>Please select options from left.</b></div>
+	<div id="LoadMe">
+		<b>Please select options from left.</b>
+		<p>[% status_msg || c.request.params.status_msg %]</p>
+	</div>
 	<script>
 	$('.dockItem').click(function() {
 		$('#LoadMe').load($(this).attr('href')).hide().fadeIn();
