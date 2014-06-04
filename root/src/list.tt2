@@ -11,7 +11,8 @@
 				</tr>
 				[% FOREACH complain IN complains %]
 					<tr>
-						<td>[% complain.complainid %]</td><td>[% complain.username %]</td>
+						<td><a href="[% c.uri_for('/admin/resolve') %]/[% complain.complainid %]">[% complain.complainid %]</a>
+							</td><td>[% complain.username %]</td>
 						<td>[% complain.useraddress %]</td><td>[% complain.usercontact %]</td>
 						<td>[% complain.productserial %]</td><td>[% complain.producttype %]</td>
 						<td>[% complain.productmake %]</td><td>[% complain.complain %]</td>

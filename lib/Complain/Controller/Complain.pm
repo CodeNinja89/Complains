@@ -42,8 +42,9 @@ sub lodgeComplain :Chained('/') :PathPart('complain/lodgeComplain') :Args(0) {
 	my $problem = $c->request->params->{problem};
 	my $complain = $c->request->params->{complain};
 	$complain = $problem." - ".$complain;
+	my $id = srand() % 1123581321;
 	my $entry = $c->model('DB::Complain')->create({
-		complainid => srand() % 1123581321,
+		complainid => $id,
 		username => $name,
 		useraddress => $address,
 		usercontact => $contact,
@@ -53,9 +54,8 @@ sub lodgeComplain :Chained('/') :PathPart('complain/lodgeComplain') :Args(0) {
 		complain => $complain,
 		status => 0 # new complain... status == open
 	});
-	$c->stash(complain => $entry,
-		template => 'done.tt2'
-	);
+	$c->response->redirect($c->uri_for($self->action_for('index'),
+		{status_msg => $id}));
 }
 
 sub track :Chained('/') :PathPart('complain/track') :Args(0) {
@@ -67,6 +67,7 @@ sub search :Chained('/') :PathPart('complain/search') :Args(0) {
 	my ($self, $c) = @_;
 	my $id = $c->request->params->{trackID};
 	$c->stash(complain => $c->model('DB::Complain')->find($id));
+	$c->stash(resolve => $c->model('DB::Resolve')->find($id));
 	$c->stash(template => 'search.tt2');
 }
 

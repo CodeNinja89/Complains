@@ -17,7 +17,7 @@
 					<tr><td>Status: Open/pending</td></tr>
 				[% END %]
 				[% IF complain.status == 1 %]
-					<tr><td>Status: In process</td></tr>
+					<tr><td>Status: In process</td><td>[% resolve.detail %]</td></tr>
 				[% END %]
 				[% IF complain.status == 2 %]
 					<tr><td>Status: Closed</td></tr>

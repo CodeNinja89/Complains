@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" media="screen" href="../static/css/main.css">
+<link rel="stylesheet" type="text/css" media="screen" href="[% c.uri_for('/static/css/main.css') %]">
 <div id="page" style="display: none_;">
 	<div class="page-top"></div>
 	<div class="page-content">
@@ -47,7 +47,10 @@
 				<input type="radio" name="status" value="0">Open<br />
 				<input type="radio" name="status" value="1">In process<br />
 				<input type="radio" name="status" value="2">Closed/Resolved
-				<p><input type="submit" value="Resolve/Assign" id="submit"></p>
+				<p>
+					<input type="submit" value="Resolve/Assign" id="submit">
+					<a href="[% c.uri_for('/admin') %]">Click here to redirect</a>
+				</p>
 			</form>
 		</div>
 	</div>

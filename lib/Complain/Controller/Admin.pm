@@ -39,17 +39,12 @@ sub list :Chained('base') :PathPart('list') {
 	$c->stash(template => 'list.tt2');
 }
 
-sub resolve :Chained('base') :PathPart('resolve') {
-	my ($self, $c) = @_;
-	my $id = $c->request->params->{trackID};
-	if($id) {
-		$c->log->debug("admin/resolve: $id");
-		$c->stash(complain => $c->stash->{resultset}->find($id),
-			id => $id, template => 'resolve.tt2');
-	} else {
-		$c->log->debug("admin/resolve: no track id");
-		$c->stash(template => 'find.tt2');
-	}
+sub resolve :Chained('base') :PathPart('resolve') :Args(1) {
+	my ($self, $c, $id) = @_;
+	# my $id = $c->request->params->{trackID};
+	$c->log->debug("admin/resolve: $id");
+	$c->stash(complain => $c->stash->{resultset}->find($id),
+		id => $id, template => 'resolve.tt2');
 }
 
 sub assign :Chained('base') :PathPart('assign') :Args(1){

@@ -51,7 +51,10 @@
 			<a class="dockItem" href="[% c.uri_for('/login') %]"><img src="../static/images/tow.png" title="Admin Login" /></a>
 		</ul>
 	</div>
-	<div id="LoadMe"><b>Please select options from left.</b></div>
+	<div id="LoadMe">
+		<b>Please select options from left.</b>
+		<p>[% status_msg || c.request.params.status_msg %]</p>
+	</div>
 	<script>
 	$('.dockItem').click(function() {
 		$('#LoadMe').load($(this).attr('href')).hide().fadeIn();
