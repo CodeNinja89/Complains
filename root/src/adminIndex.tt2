@@ -1,5 +1,5 @@
 <!--
-   untitled.html
+   adminIndex.html
    
    Copyright 2014 Code Ninja <code-ninja@code-ninja-GeniuSisMe>
    
@@ -47,8 +47,7 @@
 	<div id="dockContainer">
 		<ul id="jqDock">
 			<a class="dockItem" href="[% c.uri_for('/admin/list') %]"><img src="../static/images/create.png" title="Current Calls" /></a>
-			<a class="dockItem" href="[% c.uri_for('/admin/resolve') %]"><img src="../static/images/search.png" title="Resolve Calls" /></a>
-			<a href="[% c.uri_for('/logout') %]"><img src="../static/images/create.png" title="Logout" /></a>
+			<a href="[% c.uri_for('/logout') %]"><img src="../static/images/tow.png" title="Logout" /></a>
 		</ul>
 	</div>
 	<div id="LoadMe">

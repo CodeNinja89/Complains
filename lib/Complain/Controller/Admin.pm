@@ -44,7 +44,8 @@ sub resolve :Chained('base') :PathPart('resolve') :Args(1) {
 	# my $id = $c->request->params->{trackID};
 	$c->log->debug("admin/resolve: $id");
 	$c->stash(complain => $c->stash->{resultset}->find($id),
-		id => $id, template => 'resolve.tt2');
+		resolve => $c->model('DB::Resolve')->find($id), id => $id, 
+		template => 'resolve.tt2');
 }
 
 sub assign :Chained('base') :PathPart('assign') :Args(1){

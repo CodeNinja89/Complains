@@ -18,6 +18,8 @@
 					<td>[% complain.status %]</td>
 				</tr>
 			</table>
+			<p>Current status: [% resolve.detail %]</p>
+			<p>Current Engineer: [% resolve.assigned %]</p>
 			<form method="post" action="[% c.uri_for('/admin/assign') %]/[% complain.complainid%]">
 				<p>
 					<select name="engineerAssigned">
